@@ -5,7 +5,7 @@
 "
 " File:       cosme.vim
 " Maintainer: beikome
-" Modified:   2019-02-02 15:11+0900
+" Modified:   2024-09-29 02:50+0900
 " License:    MIT
 
 
@@ -149,6 +149,14 @@ hi! link vimHiGroup Statement
 hi! link vimHiTerm Identifier
 hi! link yamlKeyValueDelimiter Delimiter
 hi! link NvimInternalError Error
+
+if has('nvim-0.10')
+  hi! ModeMsg cterm=bold ctermfg=NONE gui=bold guifg=NONE
+  hi! CurSearch ctermbg=225 ctermfg=242 guibg=#ffd7ff guifg=#6c6c6c
+
+  hi! link NormalFloat Pmenu
+  hi! link WinSeparator VertSplit
+endif
 
 if has('nvim')
   let g:terminal_color_0 = '#303030'
